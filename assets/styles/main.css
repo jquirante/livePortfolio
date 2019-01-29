@@ -10236,3 +10236,13 @@ form .input-error-2:focus {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+/* Custom CSS */
+
+.headshotPhoto {
+    float: left;
+    margin: 50px 100px 50px 0;
+    height: 300px;
+    border: 10px solid rgb(211, 211, 211);
+    width: 300px;
+}

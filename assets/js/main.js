@@ -746,7 +746,7 @@
 			$('.kenburns').attr('height', w_height);
 			$('.kenburns').kenburns({
 				images: ['../assets/images/JCQ_9681.jpg',
-						'../assets/images/JCQ_0990.jpg',
+						'../assets/images/JCQ_0591.jpg',
 						'../assets/images/JCQ_9669.jpg'
 						],
 				frames_per_second: 30,
