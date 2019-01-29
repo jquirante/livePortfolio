@@ -745,9 +745,9 @@
 			$('.kenburns').attr('width', w_width);
 			$('.kenburns').attr('height', w_height);
 			$('.kenburns').kenburns({
-				images: ['http://placehold.it/2440x1578',
-						'http://placehold.it/2440x1578/999/eee',
-						'http://placehold.it/2440x1578/ccc/111'
+				images: ['../assets/images/JCQ_9681.jpg',
+						'../assets/images/JCQ_0990.jpg',
+						'../assets/images/JCQ_9669.jpg'
 						],
 				frames_per_second: 30,
 				display_time: 5000,
