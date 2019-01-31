@@ -1,0 +1,24 @@
+{
+  "name": "liveportfolio",
+  "version": "1.0.0",
+  "description": "Justen Quirante - Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jquirante/livePortfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jquirante/livePortfolio/issues"
+  },
+  "homepage": "https://github.com/jquirante/livePortfolio#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "express": "^4.16.4"
+  }
+}

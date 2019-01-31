@@ -591,6 +591,19 @@ hr {
   letter-spacing: 2.5px;
 }
 
+.formMessage {
+  display: block;
+  text-transform: uppercase;
+  font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300;
+  color: #999;
+  letter-spacing: 2.5px;
+}
+
+#aboutMeDescription {
+  color: rgb(15, 15, 15);
+}
+
 .sec-heading h1:first-child,
 .sec-heading .comingsoon .content-wrapper .content-inner .cs-timer .item .nbr-timer:first-child,
 .comingsoon .content-wrapper .content-inner .cs-timer .item .sec-heading .nbr-timer:first-child, .sec-heading h2:first-child,
@@ -10236,3 +10249,35 @@ form .input-error-2:focus {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+/* Custom CSS */
+
+.headshotPhoto {
+    float: left;
+    margin: 50px 100px 50px 0;
+    height: 300px;
+    border: 10px solid rgb(211, 211, 211);
+    width: 300px;
+}
+
+.formGifs {
+  position: relative;
+  display: block;
+}
+
+.formLoading {
+  display: none;
+  position: relative;
+  left: 36px;
+}
+
+.formSuccess {
+  display: none;
+  height: 200px;
+}
+
+.formMessage {
+  display: none;
+  left: 23px;
+  position: relative;
+}
