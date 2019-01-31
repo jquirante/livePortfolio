@@ -746,7 +746,7 @@
 			$('.kenburns').attr('height', w_height);
 			$('.kenburns').kenburns({
 				images: ['../assets/images/JCQ_9681.jpg',
-						'../assets/images/JCQ_0990.jpg',
+						'../assets/images/JCQ_0591.jpg',
 						'../assets/images/JCQ_9669.jpg'
 						],
 				frames_per_second: 30,
@@ -827,19 +827,40 @@ $( '.form-ajax' ).on( 'keyup', 'input.validate-locally', function() {
 });
 
 //	AJAX call
-$( '.form-ajax' ).submit(function(e) {
+$( '.contactSubmit' ).submit(function(e) {
+	$('.formLoading').css('display', 'block');
+	$('.contactSubmit').css('display', 'none');
+
 	e.preventDefault();
 	var $this = $( this ),
 			action = $this.attr( 'action' );
 
 	// The AJAX requrest
-	$.post(
+	$.get(
+			
 			action,
 			$this.serialize(),
 			function( data ) {
 				$( '.ajax-message' ).html( data );
 			}
-	);
+	).then (function() {
+			console.log('it worked!')
+			$('.formLoading').css('display', 'none');
+			$('.formSuccess').css('display', 'block');
+			$('.formMessage').css('display', 'block');
+			
+		});
+
+	// $.ajax({
+    //     url: 'http://localhost:4444/sendemail',
+    //     data: {
+    //         contactemail: $('input[name=email]').val(),
+    //         subject: $("input[name=subject]").val(),
+    //         message: $("textarea[name=message]").val()
+    //     }
+    // }).then (function() {
+    //     console.log('it worked!')
+    // })
 });
 
 //	Validates the fileds
@@ -885,3 +906,18 @@ function validateField ( field ) {
 	}
 
 });
+
+// Send Grid Form Submit
+
+function sendEmail() {
+    $.ajax({
+        url: 'localhost:4444/sendemail',
+        data: {
+            contactemail: $('input[name=email]').val(),
+            subject: $("input[name=subject]").val(),
+            message: $("textarea[name=message]").val()
+        }
+    }).then (function() {
+        console.log('it worked!')
+    })
+}
