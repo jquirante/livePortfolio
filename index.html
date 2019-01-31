@@ -409,7 +409,7 @@
             <header class="sec-heading">
               <h2>About Me</h2>
               <img class="headshotPhoto" src="assets/images/JCQ_Portfolio.png" alt="Testimonial">
-              <span class="subheading">Hello! My name is Justen Quirante, and I am a Web Developer with a passion for technology and designing products that people love and enjoy.
+              <span id="aboutMeDescription" class="subheading">Hello! My name is Justen Quirante, and I am a Web Developer with a passion for technology and designing products that people love and enjoy.
 
                   I graduated with a Bachelor's degree in the Health and Human Sciences from Loyola Marymount University roughly 7 years ago, but quickly found my way into the tech industry upon graduation. Most of my tech career thus far has been in Quality Assurance for the Gaming Industry where I've been fortunate to be a part of several AAA title releases. Some of my duties involve developing and maintaining test strategy standards across the department, test planning and execution for features being developed for various internal and external facing products, and collaborating directly with engineers on software development and test in an Agile team environment.
                   
@@ -1015,8 +1015,16 @@
                   <h2>Contact</h2>
                   <span class="subheading">Lorem ipsum dolor sit amet</span>
                 </header>
+                <div class="formGifs">
+                  <img  class="formLoading" src="assets/images/loading.gif">
+                  <img  class="formSuccess" src="assets/images/formSuccess.gif">
+                  <span class="formMessage">Thanks for connecting!</span>
+                  
+                  
+                </div>
 
-                <form action="assets/contact-form/contact-form.php" method="POST" class="form-ajax wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                <!-- <form action="assets/contact-form/contact-form.php" method="POST" class="form-ajax wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"> -->
+                <form action="http://localhost:4444/sendemail" method="GET" class="contactSubmit form-ajax wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
 
                   <!-- Name -->
                   <div class="form-group">
@@ -1072,7 +1080,7 @@
               <div class="row">
                 
                 <div class="col-md-6">
-                  <small>&copy; 2015 Definity. Made by <a class="no-style-link" href="http://themeforest.net/user/octarinethemes" target="_blank">OctarineThemes</a></small>
+                  <small>&copy; 2019 Definity. Made by <a class="no-style-link" href="http://themeforest.net/user/octarinethemes" target="_blank">OctarineThemes</a></small>
                 </div>
 
                 <div class="col-md-6">
