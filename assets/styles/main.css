@@ -10282,6 +10282,12 @@ form .input-error-2:focus {
   position: relative;
 }
 
+.formError {
+  display: none;
+  left: 23px;
+  position: relative;
+}
+
 #skillsHeader {
   position: relative;
   text-align: center;
@@ -10294,6 +10300,14 @@ form .input-error-2:focus {
   padding-top: 15px;
 }
 
+#skillListContainer {
+  padding-bottom: 0;
+}
+
+#skillLogo {
+  position: relative;
+  left: 50px;
+}
 #skillLogo img {
   height: 125px;
   width: 125px;

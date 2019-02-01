@@ -828,6 +828,7 @@ $( '.form-ajax' ).on( 'keyup', 'input.validate-locally', function() {
 
 //	AJAX call
 $( '.contactSubmit' ).submit(function(e) {
+	debugger;
 	$('.formLoading').css('display', 'block');
 	$('.contactSubmit').css('display', 'none');
 
@@ -836,7 +837,7 @@ $( '.contactSubmit' ).submit(function(e) {
 			action = $this.attr( 'action' );
 
 	// The AJAX requrest
-	$.get(
+	$.ajax(
 			
 			action,
 			$this.serialize(),
