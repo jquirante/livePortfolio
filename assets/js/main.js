@@ -836,7 +836,7 @@ $( '.contactSubmit' ).submit(function(e) {
 			action = $this.attr( 'action' );
 
 	// The AJAX requrest
-	$.get(
+	$.ajax(
 			
 			action,
 			$this.serialize(),
