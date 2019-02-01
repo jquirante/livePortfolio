@@ -1,0 +1,5 @@
+var sendGridCreds = {
+    sendGridKey: ''
+}
+
+module.exports = sendGridCreds;
