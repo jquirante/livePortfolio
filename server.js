@@ -2,13 +2,18 @@ const sendGridCreds = require('./config/sendGrid_creds.js');
 const express = require('express');
 server = express();
 
+server.use(express.json());
+server.use(express.urlencoded({extended: false}));
+
 server.use(function(request, response, next) {
     response.header("Access-Control-Allow-Origin", "*");
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
 
-server.get('/sendemail', ( request, response ) => {
+server.post('/sendemail', ( request, response ) => {
+    console.log('request body: ', request.body)
+    const { name, email, message } = request.body;
 
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(sendGridCreds.sendGridKey);
@@ -16,22 +21,25 @@ server.get('/sendemail', ( request, response ) => {
         to: 'jcquirante@gmail.com',
         from: 'mailerdaemon@justenquirante.com',
         subject: 'Received a message at ' + (new Date()).toLocaleString(),
-        reply_to: request.query.email,
+        reply_to: email,
         text: `
-            Name: ${ request.query.name }
-            Email: ${ request.query.email }
-            Message: ${ request.query.message }
+            Name: ${ name }
+            Email: ${ email }
+            Message: ${ message }
         `,
         html: `
-            <div>Name: ${ request.query.name } </div>
-            <div>Email: ${ request.query.email }</div>
-            <div>Message: ${ request.query.message }</div>
+            <div>Name: ${ name } </div>
+            <div>Email: ${ email }</div>
+            <div>Message: ${ message }</div>
         `,
     };
     
     sgMail.send(msg).then(function() {
         console.log(arguments)
-        response.send('done');
+        let output = {
+            success: true,
+        }
+        response.send(output);
     }).catch(function(error){
         console.log(error);
     });

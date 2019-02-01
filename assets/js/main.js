@@ -827,41 +827,45 @@ $( '.form-ajax' ).on( 'keyup', 'input.validate-locally', function() {
 });
 
 //	AJAX call
-$( '.contactSubmit' ).submit(function(e) {
+$('#submitContactForm').click($( '.contactSubmit' ).submit(function(event) {
+	event.preventDefault();
 	$('.formLoading').css('display', 'block');
 	$('.contactSubmit').css('display', 'none');
 
-	e.preventDefault();
-	var $this = $( this ),
-			action = $this.attr( 'action' );
+	let data = $( '.contactSubmit' ).serialize();
+	// var $this = $( this ),
+	// 		action = $this.attr( 'action' );
 
 	// The AJAX requrest
-	$.ajax(
+	// $.post(
 			
-			action,
-			$this.serialize(),
-			function( data ) {
-				$( '.ajax-message' ).html( data );
-			}
-	).then (function() {
-			console.log('it worked!')
-			$('.formLoading').css('display', 'none');
-			$('.formSuccess').css('display', 'block');
-			$('.formMessage').css('display', 'block');
+	// 		action,
+	// 		$this.serialize(),
+	// 		function( data ) {
+	// 			$( '.ajax-message' ).html( data );
+	// 		}
+	// ).then (function() {
+	// 		console.log('it worked!')
+	// 		$('.formLoading').css('display', 'none');
+	// 		$('.formSuccess').css('display', 'block');
+	// 		$('.formMessage').css('display', 'block');
 			
-		});
+	// 	});
 
-	// $.ajax({
-    //     url: 'http://localhost:4444/sendemail',
-    //     data: {
-    //         contactemail: $('input[name=email]').val(),
-    //         subject: $("input[name=subject]").val(),
-    //         message: $("textarea[name=message]").val()
-    //     }
-    // }).then (function() {
-    //     console.log('it worked!')
-    // })
-});
+	$.ajax({
+		url: 'http://localhost:4444/sendemail',
+		method: 'post',
+        data: data,
+    }).then (function() {
+		console.log('it worked!')
+		$('.formLoading').css('display', 'none');
+		$('.formSuccess').css('display', 'block');
+		$('.formMessage').css('display', 'block');
+		return false;
+	})
+	
+	
+}));
 
 //	Validates the fileds
 function validateField ( field ) {
@@ -921,3 +925,7 @@ function sendEmail() {
         console.log('it worked!')
     })
 }
+
+// $('#submitContactForm').click( function(e) {
+// 	e.preventDefault(); // comment this out and the browser will redirect
+//   });
