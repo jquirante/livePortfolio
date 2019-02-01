@@ -828,7 +828,6 @@ $( '.form-ajax' ).on( 'keyup', 'input.validate-locally', function() {
 
 //	AJAX call
 $( '.contactSubmit' ).submit(function(e) {
-	debugger;
 	$('.formLoading').css('display', 'block');
 	$('.contactSubmit').css('display', 'none');
 
