@@ -915,7 +915,7 @@ function validateField ( field ) {
 
 function sendEmail() {
     $.ajax({
-        url: 'localhost:4444/sendemail',
+        url: '/sendemail',
         data: {
             contactemail: $('input[name=email]').val(),
             subject: $("input[name=subject]").val(),
