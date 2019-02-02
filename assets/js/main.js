@@ -853,7 +853,7 @@ $('#submitContactForm').click($( '.contactSubmit' ).submit(function(event) {
 	// 	});
 
 	$.ajax({
-		url: 'http://dev.justenquirante.com:4444/sendemail',
+		url: 'http://justenquirante.com:4444/sendemail',
 		method: 'post',
         data: data,
     }).then (function() {
