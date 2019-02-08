@@ -10313,3 +10313,11 @@ form .input-error-2:focus {
   height: 125px;
   width: 125px;
 }
+
+#bookBirdSection {
+  border: 1px solid rgb(204, 204, 204);
+}
+
+#bookBirdDescription {
+  vertical-align: top;
+}
