@@ -1,6 +1,28 @@
+const https = require('https');
+const fs = require("fs");
 const sendGridCreds = require('./config/sendGrid_creds.js');
 const express = require('express');
 server = express();
+
+// Cert
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/justenquirante.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/justenquirante.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/justenquirante.com/chain.pem', 'utf8');
+
+const options = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+
+}
+
+server.use(function(req, res, next) {
+    if (req.secure) {
+        next();
+    } else {
+        res.redirect('https://' + req.headers.host + req.url);
+    }
+});
 
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
@@ -48,6 +70,7 @@ server.post('/sendemail', ( request, response ) => {
 
 })
 
-server.listen(4444, function(){
+https.createServer(options, server).listen(4444, function(){
     console.log('server is up and running')
 })
+
