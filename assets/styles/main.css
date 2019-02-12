@@ -3959,7 +3959,7 @@ fieldset[disabled] .form-control:hover {
 }
 
 .ft-hover-item .ft-1, .ft-hover-item .ft-2 {
-  background: #ccc url(http://placehold.it/900x580);
+  background: #ccc url(https://www.youtube.com/embed/9FkQEOjgLI0);
   background-size: 100%;
   background-position: 50%;
   -webkit-transition: background-size 0.3s;
@@ -10312,4 +10312,36 @@ form .input-error-2:focus {
 #skillLogo img {
   height: 125px;
   width: 125px;
+}
+
+#bookBirdSection {
+  border: 1px solid rgb(204, 204, 204);
+}
+
+#bookBirdDescription {
+  vertical-align: top;
+}
+
+#projectPhotoSlider {
+  margin-bottom: 80px;
+}
+
+#projectBackgroundImage {
+  padding: 0;
+  margin-bottom: 10px;
+  /* border: 5px solid grey; */
+}
+
+#projectImagePreview {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+#projectDetailsSection {
+  padding-top: 75px;
+}
+
+#projectDetailsSectionFindFlix {
+  padding-top: 75px;
 }

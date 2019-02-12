@@ -903,7 +903,7 @@
 	} // .ft-item
 
 	.ft-1 {
-		background: #ccc url(http://placehold.it/900x580);
+		background: #ccc url(https://www.youtube.com/embed/9FkQEOjgLI0);
 		background-size: 100%;
 		background-position: 50%;
 		transition: background-size .3s;
@@ -922,7 +922,18 @@
 
 	.ft-2 {
 		@extend .ft-1;
-		background: #ccc url(http://placehold.it/900x580/999/eee);
+		background: #ccc url(https://www.youtube.com/embed/9FkQEOjgLI0);
+		background-size: 100%;
+		background-position: 50%;
+
+		.bg-overlay {
+			background: rgba(17,17,17, .4);
+		}
+	}
+
+	.ft-3 {
+		@extend .ft-1;
+		background: #ccc url(https://www.youtube.com/embed/9FkQEOjgLI0);
 		background-size: 100%;
 		background-position: 50%;
 

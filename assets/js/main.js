@@ -17,7 +17,7 @@
 		initSliders();
 		initGallery();
 		initAnimation();
-		initVideoBg();
+		// initVideoBg();
 		initKenburns();
 		initCountdown();
 
@@ -46,7 +46,7 @@
 		});
 
 		initPortfolio();
-		initBlogMasonry();
+		// initBlogMasonry();
 
 	});
 
@@ -714,20 +714,20 @@
 	Video Background
 -------------------------------------------------- */
 
-	function initVideoBg () {
+	// function initVideoBg () {
 
-		var hasBgVideo = $('#fs-video-one-bg').hasClass('player');
-		var hasFwBgVideo = $('#fw-video-one-bg').hasClass('player');
-		var hasSecBgVideo = $('#section-video').hasClass('player');
+	// 	var hasBgVideo = $('#fs-video-one-bg').hasClass('player');
+	// 	var hasFwBgVideo = $('#fw-video-one-bg').hasClass('player');
+	// 	var hasSecBgVideo = $('#section-video').hasClass('player');
 
-		if (hasBgVideo || hasFwBgVideo || hasSecBgVideo) {
+	// 	if (hasBgVideo || hasFwBgVideo || hasSecBgVideo) {
 
-			$('.player').YTPlayer();
+	// 		$('.player').YTPlayer();
 
-		}
+	// 	}
 		
 
-	}
+	// }
 
 
 
