@@ -58,47 +58,45 @@
               </button>
 
               <!-- Logo -->
-              <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="assets/images/logo.png" alt="Definity - Logo"></a>
+              <a class="navbar-brand" href="../../index.html"><img class="navbar-logo" src="assets/images/logo.png" alt="Definity - Logo"></a>
             </div><!-- / .navbar-header -->
 
             <!-- Navbar Links -->
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-
+                
                 <!-- Home -->
                 <li class="dropdown mega-fw">
-                    <a href="#home" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                    <a href="../../index.html">Home</a>
                 </li><!-- / Home -->
 
                 <!-- Projects-->
 
                 <li class="dropdown mega-fw">
-                  <a href="#recentProjects" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+                  <a href="../../index.html#recentProjects">Projects</a>
                 </li><!-- / Projects -->
 
                 <!-- About Me-->
                 <li class="dropdown mega-fw">
-                    <a href="#aboutMe" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">About Me</a>
+                    <a href="../../index.html#aboutMe">About Me</a>
                 </li> <!-- / About Me -->
                 
                 <!-- Skills-->
 
                 <li class="dropdown mega-fw">
-                    <a href="#skillsSection" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Skills</a>
+                    <a href="../../index.html#skillsSection">Skills</a>
                 </li><!-- / Skills -->
-
-                
 
                 <!-- Contact -->
 
                 <li class="dropdown mega-fw">
-                    <a href="#contact" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+                    <a href="../../index.html#contact">Contact</a>
                 </li><!-- / Contact -->
 
                 <!-- Resume -->
 
                 <li class="dropdown mega-fw">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Resume</a>
+                    <a href="#">Resume</a>
                 </li><!-- / Resume -->
 
               </ul><!-- / .nav .navbar-nav .navbar-right -->
@@ -136,15 +134,25 @@
 
         <!-- ========== Portfolio Single ========== -->
 
-        <section class="section container pfolio-single">
+        <section id="projectDetailsSectionFindFlix" class="section container pfolio-single">
           <div class="row ws-m">
 
+                  <div class="container">
+                      <div class="row">
+        
+                        <div class="col-sm-6">
+                          <h1>FindFlix</h1>
+                        </div>
+        
+                      </div>
+                    </div>
+                <div class="row ws-m">
             <!-- Slider -->
           <div id="projectPhotoSlider" class="row">
             <div class="col-md-12">
               <ul class="single-img-slider">
-                <li><img height="470" width="1140" src="./../../assets/images/watchTrailer.png" alt="Project Image"></li>
-                <li><img src="http://placehold.it/1140x470/ccc/999" alt="Project Image"></li>
+                  <li><img img height="470" width="1140" src="./../../assets/images/findFlix/findFlix_home.png" alt="Project Image"></li>
+                  <li><img height="470" width="1140" src="./../../assets/images/findflix/watchTrailer.png" alt="Project Image"></li>
               </ul>
             </div>
           </div><!-- / .row -->
@@ -161,14 +169,27 @@
 
             <!-- Challenge -->
             <div class="col-md-offset-1 col-md-4 mb-sm-50">
-              <h5 class="h-alt">The challenge</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+                <h5 class="h-alt">Technologies</h5>
+                <ul>
+                  <li>HTML5</li>      
+                  <li>CSS3</li>
+                  <li>OOP</li>
+                  <li>JavaScript</li>
+                  <li>The Movie Database API</li>
+                  <li>Youtube API</li>
+                  <li>Google Maps/Places API</li>
+                </ul>
             </div>
 
             <!-- Solution -->
             <div class="col-md-4">
-              <h5 class="h-alt">The solution</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h5 class="h-alt">Project Wins</h5>
+                <ul>
+                    <li>Created a responsive fronten design with HTML5, CSS3, and Flexbox</li>
+                    <li>Utilized The Movie Database, Youtube, and Google APIs to allow users to view movie, trailer information, and find nearby theatres</li>
+                    <li></li>       
+                    <li></li>  
+                </ul>
             </div>
 
           </div><!-- / .row -->
@@ -187,8 +208,8 @@
               
               <nav>
                 <ul class="nav-btns">
-                  <li class="prev"><a href="#"><span class="nav-icon linea-arrows-slim-left"></span>  prev project</a></li>
-                  <li class="all"><a href="portfolio-fw-3col.html"><span class="nav-icon linea-arrows-squares"></span></a></li>
+                  <li class="prev"><a href="../../pages/portfolio/bookbird.html"><span class="nav-icon linea-arrows-slim-left"></span>  prev project</a></li>
+                  <li class="all"><a href="../../index.html#recentProjects"><span class="nav-icon linea-arrows-squares"></span></a></li>
                   <li class="next"><a href="#">next project <span class="nav-icon linea-arrows-slim-right"></span></a></li>
                 </ul>
               </nav>
@@ -196,110 +217,6 @@
             </div>
           </div>
         </div><!-- / .project-nav -->
-        
-
-
-        <!-- ========== Footer Widgets ========== -->
-        
-        <footer class="footer-widgets">
-          <div class="container">
-            <div class="row section">
-
-              <!-- About Us -->
-              <div class="col-md-3 col-sm-6 mb-sm-100">
-                <div class="widget about-widget">
-                  <h5 class="header-widget">About Us</h5>
-                  <p>Lorem ipsum dolor sit amet, eiusmod consectetur adipisicing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
-
-                  <ul class="social-links">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                  </ul>
-                </div><!-- / .widget -->
-              </div><!-- / .col-md-3 -->
-
-              <!-- Instagram Feed -->
-              <div class="col-md-3 col-sm-6 mb-sm-100">
-                <div class="widget gallery-widget">
-                  <h5 class="header-widget">Instagram Feed</h5>
-                  <ul>
-
-                    <li><a href="http://placehold.it/650x450" class="gallery-widget-lightbox"><img src="http://placehold.it/87x87/999/eee" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="http://placehold.it/650x450" class="gallery-widget-lightbox"><img src="http://placehold.it/87x87" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="http://placehold.it/650x450" class="gallery-widget-lightbox"><img src="http://placehold.it/87x87/999/eee" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="http://placehold.it/650x450" class="gallery-widget-lightbox"><img src="http://placehold.it/87x87" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="http://placehold.it/650x450" class="gallery-widget-lightbox"><img src="http://placehold.it/87x87/999/eee" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="http://placehold.it/650x450" class="gallery-widget-lightbox"><img src="http://placehold.it/87x87" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                  </ul>
-                </div><!-- / .widget -->
-              </div><!-- / .col-md-3 -->
-
-              <!-- Twitter Feed -->
-              <div class="col-md-3 col-sm-6 mb-sm-100">
-                <div class="widget twitter-widget">
-                  <h5 class="header-widget">Twitter Feed</h5>
-                  <ul>
-                    
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <p>5 Reasons You Should Take a Sabbatical from Creative Work <a href="#">http://enva.to/NTa6F</a> by <a href="#">@envato</a> <span>- AUG 10</span></p>
-                    </li>
-
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <p>What is the enemy of <a href="#">#creativity</a>? <a href="#">http://enva.to/hVl5G</a>  [VIDEO] <br>by <a href="#">@envato</a> <span>- AUG 5</span></p>
-                    </li>
-
-                  </ul>
-                </div><!-- / .widget -->
-              </div><!-- / .col-md-3 -->
-
-              <!-- Newsletter -->
-              <div class="col-md-3 col-sm-6">
-                <div class="widget newsletter-widget">
-                  <h5 class="header-widget">Newsletter</h5>
-                  
-                  <form action="post">
-                    <div class="form-group">
-                      <input type="email" name="w-newssletter" placeholder="Join our newsletter">
-                      <button type="submit"><i class="fa fa-send-o"></i></button>
-                    </div>
-                  </form>
-
-                </div><!-- / .widget -->
-              </div><!-- / .col-md-3 -->
-
-            </div><!-- / .row -->
-          </div><!-- / .container -->
-
-
-          <!-- Copyright -->
-          <div class="copyright">
-            <div class="container">
-              <div class="row">
-                
-                <div class="col-sm-6">
-                  <small>&copy; 2015 Definity. Made by <a class="no-style-link" href="http://themeforest.net/user/octarinethemes" target="_blank">OctarineThemes</a></small>
-                </div>
-
-                <div class="col-sm-6">
-                  <small><a href="#page-top" class="pull-right to-the-top">To the top<i class="fa fa-angle-up"></i></a></small>
-                </div>
-
-              </div><!-- / .row -->
-            </div><!-- / .container -->
-          </div><!-- / .copyright -->
-
-        </footer><!-- / .footer-widgets -->
     
 
 
