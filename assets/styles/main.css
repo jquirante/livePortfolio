@@ -3036,11 +3036,13 @@ fieldset[disabled] .form-control:hover {
 }
 
 .navbar-trans .navbar-logo {
-  content: url(../images/logo-light.png);
+  /* content: url(../images/logo-light.png); */
+  content: url(../images/justen_logo_lite.jpg);
 }
 
 .navbar-trans .navbar-logo-dark {
-  content: url(../images/logo.png);
+  /* content: url(../images/logo.png); */
+  content: url(../images/justen_logo_dark.jpg);
 }
 
 .navbar-trans:not(.navbar-inverse) .navbar-nav li a:focus,
@@ -3897,7 +3899,7 @@ fieldset[disabled] .form-control:hover {
 /* ---- 9.11 Feature Hover Box ---- */
 .ft-hover-item .ft-item {
   position: relative;
-  height: 440px;
+  height: 350px;
   -webkit-transition: all 0.4s;
           transition: all 0.4s;
 }
@@ -10306,10 +10308,12 @@ form .input-error-2:focus {
 
 #skillLogo {
   position: relative;
-  left: 50px;
+
 }
 
 #skillLogo img {
+  position: relative;
+  left: 35%;
   height: 125px;
   width: 125px;
 }
