@@ -828,7 +828,58 @@ $( '.form-ajax' ).on( 'keyup', 'input.validate-locally', function() {
 
 //	AJAX call
 $('#submitContactForm').click($( '.contactSubmit' ).submit(function(event) {
+	
+	debugger;
 	event.preventDefault();
+
+	console.log('event:', event);
+
+	var nameValue = event.currentTarget[0].value;
+	console.log('nameValue: ', nameValue);
+	var emailValue = event.currentTarget[1].value;
+	console.log('emailValue: ', emailValue);
+	var messageValue = event.currentTarget[2].value;
+	console.log('messageValue: ', messageValue);
+
+	var errorText = "",
+			error = false;
+			// value = field.val(),
+			// siblings = field.siblings( ".alert-error" );
+
+	// Test the name field
+	
+		if ( !validateLength( nameValue, 2 ) ) {
+					error = true;
+					errorText += '<i class="fa fa-info-circle"></i> The name is too short!<br>';
+					$('input[name="name"]').addClass('input-error');
+		} else {
+			$('input[name="name"]').removeClass('input-error');
+		}
+
+		if ( !expLettersOnly.test( nameValue ) ) {
+					error = true;
+					errorText += '<i class="fa fa-info-circle"></i> The name can contain only letters and spaces!<br>';
+					$('input[name="name"]').addClass('input-error-2');
+		} else {
+			$('input[name="name"]').removeClass('input-error-2');
+		}
+
+
+	// Test the email field
+		if ( !expEmail.test( emailValue ) ) {
+					error = true;
+					errorText += '<i class="fa fa-info-circle"></i> Enter correct email address!<br>';
+					$('input[name="email"]').addClass('input-error');
+		} else {
+			$('input[name="email"]').removeClass('input-error');
+		}
+	
+
+	// Display the errors
+	nameValue.html( errorText );
+	emailValue.html( errorText );
+
+	
 	$('.formLoading').css('display', 'block');
 	$('.contactSubmit').css('display', 'none');
 
@@ -926,6 +977,12 @@ function sendEmail() {
     })
 }
 
-// $('#submitContactForm').click( function(e) {
-// 	e.preventDefault(); // comment this out and the browser will redirect
-//   });
+
+// Validate form on Send
+
+function validateFieldsOnSend(){
+	console.log('validateonsend');
+
+	return 'hello';
+}
+
