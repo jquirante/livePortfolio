@@ -3981,7 +3981,7 @@ fieldset[disabled] .form-control:hover {
 }
 
 .ft-hover-item .ft-2 {
-  background: #ccc url(http://placehold.it/900x580/999/eee);
+  /* background: #ccc url(http://placehold.it/900x580/999/eee); */
   background-size: 100%;
   background-position: 50%;
 }
