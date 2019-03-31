@@ -3961,7 +3961,7 @@ fieldset[disabled] .form-control:hover {
 }
 
 .ft-hover-item .ft-1, .ft-hover-item .ft-2 {
-  background: #ccc url(https://www.youtube.com/embed/9FkQEOjgLI0);
+  /* background: #ccc url(https://www.youtube.com/embed/9FkQEOjgLI0); */
   background-size: 100%;
   background-position: 50%;
   -webkit-transition: background-size 0.3s;
@@ -3981,7 +3981,6 @@ fieldset[disabled] .form-control:hover {
 }
 
 .ft-hover-item .ft-2 {
-  background: #ccc url(http://placehold.it/900x580/999/eee);
   background-size: 100%;
   background-position: 50%;
 }
@@ -10325,6 +10324,7 @@ form .input-error-2:focus {
 #bookBirdDescription {
   vertical-align: top;
 }
+
 
 #projectPhotoSlider {
   margin-bottom: 80px;
