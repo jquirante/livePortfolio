@@ -875,7 +875,7 @@ $('#submitContactForm').click(function(event) {
 			method: 'post',
 					data: data,
 			}).then (function() {
-			console.log('it worked!')
+			
 			$('.formLoading').css('display', 'none');
 			$('.formSuccess').css('display', 'block');
 			$('.formMessage').css('display', 'block');
