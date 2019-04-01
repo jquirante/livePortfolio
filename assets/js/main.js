@@ -20,6 +20,7 @@
 		// initVideoBg();
 		initKenburns();
 		initCountdown();
+		closeMobileNav();
 
 		if ( document.getElementById('shop-slider-range') ) {
 			initRangeSlider();
@@ -115,7 +116,9 @@
 
     			$('.nav a').on('click', function(){ 
 			        if($('.navbar-toggle').css('display') !='none'){
-			            $(".navbar-toggle").trigger( "click" );
+									
+									$(".navbar-toggle").trigger( "click" );
+									
 			        }
 			    });
 
@@ -929,3 +932,13 @@ function sendEmail() {
 // $('#submitContactForm').click( function(e) {
 // 	e.preventDefault(); // comment this out and the browser will redirect
 //   });
+
+function closeMobileNav() {
+	console.log('CLOSE MOBILE NAV');
+
+	if ($('.mobile-nav')) {
+		$('body').click(function(){
+			$(".navbar-toggle").click();
+		})
+	}
+}
