@@ -20,6 +20,7 @@
 		// initVideoBg();
 		initKenburns();
 		initCountdown();
+		
 
 		if ( document.getElementById('shop-slider-range') ) {
 			initRangeSlider();
@@ -115,7 +116,9 @@
 
     			$('.nav a').on('click', function(){ 
 			        if($('.navbar-toggle').css('display') !='none'){
-			            $(".navbar-toggle").trigger( "click" );
+									
+									$(".navbar-toggle").trigger( "click" );
+									
 			        }
 			    });
 
@@ -826,107 +829,67 @@ $( '.form-ajax' ).on( 'keyup', 'input.validate-locally', function() {
 	validateField( $(this) );
 });
 
+$( '.form-ajax' ).on( 'keyup', 'textarea.validate-locally', function() {
+	validateField( $(this) );
+});
+
 //	AJAX call
-$('#submitContactForm').click($( '.contactSubmit' ).submit(function(event) {
+$('#submitContactForm').click(function(event) {
 	
-	debugger;
 	event.preventDefault();
-
-	console.log('event:', event);
-
-	var nameValue = event.currentTarget[0].value;
-	console.log('nameValue: ', nameValue);
-	var emailValue = event.currentTarget[1].value;
-	console.log('emailValue: ', emailValue);
-	var messageValue = event.currentTarget[2].value;
-	console.log('messageValue: ', messageValue);
-
-	var errorText = "",
-			error = false;
-			// value = field.val(),
-			// siblings = field.siblings( ".alert-error" );
-
-	// Test the name field
 	
-		if ( !validateLength( nameValue, 1 ) ) {
-					error = true;
-					errorText += '<i class="fa fa-info-circle"></i> The name is too short!<br>';
-					$('input[name="name"]').addClass('input-error');
-		} else {
-			$('input[name="name"]').removeClass('input-error');
-		}
+	var nameValue = event.currentTarget.form[0].value,
+	    emailValue = event.currentTarget.form[1].value,
+	    messageValue = event.currentTarget.form[2].value;
+	
 
-		if ( !expLettersOnly.test( nameValue ) ) {
-					error = true;
-					errorText += '<i class="fa fa-info-circle"></i> The name can contain only letters and spaces!<br>';
-					$('input[name="name"]').addClass('input-error-2');
-		} else {
-			$('input[name="name"]').removeClass('input-error-2');
-		}
+	var allFieldsNotValid = validateFieldsOnSend(nameValue, emailValue, messageValue);
 
+	
+	if (!allFieldsNotValid) {
+		$('.formLoading').css('display', 'block');
+		$('.contactSubmit').css('display', 'none');
 
-	// Test the email field
-		if ( !expEmail.test( emailValue ) ) {
-					error = true;
-					errorText += '<i class="fa fa-info-circle"></i> Enter correct email address!<br>';
-					$('input[name="email"]').addClass('input-error');
-		} else {
-			$('input[name="email"]').removeClass('input-error');
-		}
-		
-	// Test the message field
-	if ( !validateLength( messageValue, 2 ) ) {
-		error = true;
-		errorText += '<i class="fa fa-info-circle"></i> The name is too short!<br>';
-		$('input[name="message"]').addClass('input-error');
+		let data = $( '.contactSubmit' ).serialize();
+		// var $this = $( this ),
+		// 		action = $this.attr( 'action' );
+
+		// The AJAX requrest
+		// $.post(
+				
+		// 		action,
+		// 		$this.serialize(),
+		// 		function( data ) {
+		// 			$( '.ajax-message' ).html( data );
+		// 		}
+		// ).then (function() {
+		// 		console.log('it worked!')
+		// 		$('.formLoading').css('display', 'none');
+		// 		$('.formSuccess').css('display', 'block');
+		// 		$('.formMessage').css('display', 'block');
+				
+		// 	});
+
+		$.ajax({
+			url: 'https://dev.justenquirante.com:4444/sendemail',
+			method: 'post',
+					data: data,
+			}).then (function() {
+			console.log('it worked!')
+			$('.formLoading').css('display', 'none');
+			$('.formSuccess').css('display', 'block');
+			$('.formMessage').css('display', 'block');
+			return false;
+		}).fail(function() {
+			console.log('Didnt work');
+		});
 	} else {
-		$('input[name="message"]').removeClass('input-error');
+		return;
 	}
-
-	// Display the errors
-	nameValue.html( errorText );
-	emailValue.html( errorText );
-
-	
-	$('.formLoading').css('display', 'block');
-	$('.contactSubmit').css('display', 'none');
-
-	let data = $( '.contactSubmit' ).serialize();
-	// var $this = $( this ),
-	// 		action = $this.attr( 'action' );
-
-	// The AJAX requrest
-	// $.post(
-			
-	// 		action,
-	// 		$this.serialize(),
-	// 		function( data ) {
-	// 			$( '.ajax-message' ).html( data );
-	// 		}
-	// ).then (function() {
-	// 		console.log('it worked!')
-	// 		$('.formLoading').css('display', 'none');
-	// 		$('.formSuccess').css('display', 'block');
-	// 		$('.formMessage').css('display', 'block');
-			
-	// 	});
-
-	$.ajax({
-		url: 'https://dev.justenquirante.com:4444/sendemail',
-		method: 'post',
-        data: data,
-    }).then (function() {
-		console.log('it worked!')
-		$('.formLoading').css('display', 'none');
-		$('.formSuccess').css('display', 'block');
-		$('.formMessage').css('display', 'block');
-		return false;
-	}).fail(function() {
-		console.log('Didnt work');
-	});
 	
 	
-}));
+	
+});
 
 //	Validates the fileds
 function validateField ( field ) {
@@ -955,20 +918,88 @@ function validateField ( field ) {
 	}
 
 	// Test the email field
-	if ( field.attr("name") === "email" ) {
-		if ( !expEmail.test( value ) ) {
-					error = true;
-					errorText += '<i class="fa fa-info-circle"></i> Enter correct email address!<br>';
-					$('input[name="email"]').addClass('input-error');
-		} else {
-			$('input[name="email"]').removeClass('input-error');
+		if ( field.attr("name") === "email" ) {
+			if ( !expEmail.test( value ) ) {
+						error = true;
+						errorText += '<i class="fa fa-info-circle"></i> Enter correct email address!<br>';
+						$('input[name="email"]').addClass('input-error');
+			} else {
+				$('input[name="email"]').removeClass('input-error');
+			}
 		}
-	}
 
+	// Test the message field
+		if ( field.attr( "name") === "message" ) {
+			if ( !validateLength( value, 2 ) ) {
+				error = true;
+				errorText += '<i class="fa fa-info-circle"></i> A longer message is required!<br>';
+				$('textarea[name="message"]').addClass('input-error');
+			} else {
+				$('textarea[name="message"]').removeClass('input-error');
+			}
+		}
 	// Display the errors
 	siblings.html( errorText );
 
 	}
+
+	// Validate form on Send
+
+function validateFieldsOnSend(nameInputValue, emailInputValue, messageInputValue){
+	
+	var nameErrorText = "",
+			emailErrorText = "",
+			messageErrorText = "",
+			error = false;
+			// value = field.val(),
+			// siblings = field.siblings( ".alert-error" );
+
+	// Test the name field
+	
+		if ( !validateLength( nameInputValue, 1 ) ) {
+					error = true;
+					nameErrorText += '<i class="fa fa-info-circle"></i> The name is too short!<br>';
+					$('input[name="name"]').addClass('input-error');
+		} else {
+			$('input[name="name"]').removeClass('input-error');
+		}
+
+		if ( !expLettersOnly.test( nameInputValue ) ) {
+					error = true;
+					nameErrorText += '<i class="fa fa-info-circle"></i> The name can contain only letters and spaces!<br>';
+					$('input[name="name"]').addClass('input-error-2');
+		} else {
+			$('input[name="name"]').removeClass('input-error-2');
+		}
+
+
+	// Test the email field
+		if ( !expEmail.test( emailInputValue ) ) {
+					error = true;
+					emailErrorText += '<i class="fa fa-info-circle"></i> Enter correct email address!<br>';
+					$('input[name="email"]').addClass('input-error');
+		} else {
+			$('input[name="email"]').removeClass('input-error');
+		}
+		
+	// Test the message field
+		if ( !validateLength( messageInputValue, 2 ) ) {
+			error = true;
+			messageErrorText += '<i class="fa fa-info-circle"></i> A longer message is required!<br>';
+			$('textarea[name="message"]').addClass('input-error');
+		} else {
+			$('textarea[name="message"]').removeClass('input-error');
+		}
+
+	// Display the errors
+	$('input[name="name"]').next().next().html( nameErrorText );
+	$('input[name="email"]').next().next().html( emailErrorText );
+	$('textarea[name="message"]').next().next().html( messageErrorText );
+
+	return error;
+}
+
+
 
 });
 
@@ -987,12 +1018,4 @@ function sendEmail() {
     })
 }
 
-
-// Validate form on Send
-
-function validateFieldsOnSend(){
-	console.log('validateonsend');
-
-	return 'hello';
-}
 
