@@ -848,7 +848,7 @@ $('#submitContactForm').click($( '.contactSubmit' ).submit(function(event) {
 
 	// Test the name field
 	
-		if ( !validateLength( nameValue, 2 ) ) {
+		if ( !validateLength( nameValue, 1 ) ) {
 					error = true;
 					errorText += '<i class="fa fa-info-circle"></i> The name is too short!<br>';
 					$('input[name="name"]').addClass('input-error');
@@ -873,7 +873,15 @@ $('#submitContactForm').click($( '.contactSubmit' ).submit(function(event) {
 		} else {
 			$('input[name="email"]').removeClass('input-error');
 		}
-	
+		
+	// Test the message field
+	if ( !validateLength( messageValue, 2 ) ) {
+		error = true;
+		errorText += '<i class="fa fa-info-circle"></i> The name is too short!<br>';
+		$('input[name="message"]').addClass('input-error');
+	} else {
+		$('input[name="message"]').removeClass('input-error');
+	}
 
 	// Display the errors
 	nameValue.html( errorText );
@@ -913,7 +921,9 @@ $('#submitContactForm').click($( '.contactSubmit' ).submit(function(event) {
 		$('.formSuccess').css('display', 'block');
 		$('.formMessage').css('display', 'block');
 		return false;
-	})
+	}).fail(function() {
+		console.log('Didnt work');
+	});
 	
 	
 }));
