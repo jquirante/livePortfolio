@@ -847,6 +847,7 @@ $('#submitContactForm').click(function(event) {
 
 	
 	if (!allFieldsNotValid) {
+		$('.formError').css('display', 'none');
 		$('.formLoading').css('display', 'block');
 		$('.contactSubmit').css('display', 'none');
 
@@ -879,8 +880,13 @@ $('#submitContactForm').click(function(event) {
 			$('.formLoading').css('display', 'none');
 			$('.formSuccess').css('display', 'block');
 			$('.formMessage').css('display', 'block');
+			
 			return false;
 		}).fail(function() {
+
+			$('.formLoading').css('display', 'none');
+			$('.contactSubmit').css('display', 'block');
+			$('.formError').css('display', 'block');
 			console.log('Didnt work');
 		});
 	} else {

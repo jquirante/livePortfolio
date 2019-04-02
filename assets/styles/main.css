@@ -10283,7 +10283,13 @@ form .input-error-2:focus {
   position: relative;
 }
 
+.formErrorFont{
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
 .formError {
+  
+  margin-bottom: 15px;
+  color: red;
   display: none;
   left: 23px;
   position: relative;
